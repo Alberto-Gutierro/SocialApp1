@@ -13,6 +13,7 @@ import com.example.gerard.socialapp.GlideApp;
 import com.example.gerard.socialapp.R;
 import com.example.gerard.socialapp.model.Post;
 import com.example.gerard.socialapp.view.PostViewHolder;
+import com.example.gerard.socialapp.view.activity.DetaillPostActivity;
 import com.example.gerard.socialapp.view.activity.MediaActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -77,9 +78,8 @@ public class PostsFragment extends Fragment {
                     viewHolder.image.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getActivity(), MediaActivity.class);
-                            intent.putExtra("mediaUrl", post.mediaUrl);
-                            intent.putExtra("mediaType", post.mediaType);
+                            Intent intent = new Intent(getActivity(), DetaillPostActivity.class);
+                            intent.putExtra("postkey", postKey);
                             startActivity(intent);
                         }
                     });
